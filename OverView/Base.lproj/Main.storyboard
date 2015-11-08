@@ -656,7 +656,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="A3E02123-A05A-4B5D-9C8A-60EEB6F5591E" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="lJ2-vo-LWm">
+                        <toolbar key="toolbar" implicitIdentifier="A3E02123-A05A-4B5D-9C8A-60EEB6F5591E" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="lJ2-vo-LWm" customClass="Toolbar" customModule="OverView" customModuleProvider="target">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="X9B-jx-okl"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Akz-1E-hxG"/>
@@ -674,12 +674,9 @@
                                             <font key="font" metaFont="menu"/>
                                             <menu key="menu" id="v77-aQ-TDJ"/>
                                         </popUpButtonCell>
-                                        <connections>
-                                            <action selector="fontMenuDidChange:" target="Oky-zY-oP4" id="r6j-yo-QaF"/>
-                                        </connections>
                                     </popUpButton>
                                     <connections>
-                                        <action selector="fontMenuDidChange:" target="B8D-0N-5wS" id="8zj-3b-4Jn"/>
+                                        <action selector="fontMenuDidChange:" target="lJ2-vo-LWm" id="GuO-NB-6Zj"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="0F3B8ECB-C74A-42A7-AD18-61AEA4BD446A" label="Size Slider" paletteLabel="Size Slider" id="gvl-kC-zhY">
@@ -693,13 +690,13 @@
                                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="8" maxValue="127" doubleValue="24" tickMarkPosition="below" numberOfTickMarks="12" sliderType="linear" id="01Q-kq-Jfd"/>
                                     </slider>
                                     <connections>
-                                        <action selector="fontSizeSliderDidChange:" target="B8D-0N-5wS" id="fRv-am-dFK"/>
+                                        <action selector="fontSizeSliderDidChange:" target="lJ2-vo-LWm" id="z0A-wg-hWn"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="62CB4C70-4796-478E-ABF1-8231DC1DF0F3" label="Size Input" paletteLabel="Size Input" id="kJ9-wc-Jvu">
                                     <nil key="toolTip"/>
-                                    <size key="minSize" width="52" height="22"/>
-                                    <size key="maxSize" width="52" height="22"/>
+                                    <size key="minSize" width="32" height="22"/>
+                                    <size key="maxSize" width="32" height="22"/>
                                     <textField key="view" verticalHuggingPriority="750" id="0tZ-Mg-F6y">
                                         <rect key="frame" x="14" y="14" width="32" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -711,22 +708,25 @@
                                         </textFieldCell>
                                     </textField>
                                     <connections>
-                                        <action selector="fontSizeInputDidChange:" target="B8D-0N-5wS" id="tSK-jd-bbr"/>
+                                        <action selector="fontSizeInputDidChange:" target="lJ2-vo-LWm" id="gv8-30-Vkq"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="080FA265-1398-4BA5-BF3F-2D5B35DDEA30" label="Custom View" paletteLabel="Custom View" id="Fwb-sT-r3P">
+                                <toolbarItem implicitItemIdentifier="080FA265-1398-4BA5-BF3F-2D5B35DDEA30" label="Ruler" paletteLabel="Ruler" id="Fwb-sT-r3P">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="32" height="25"/>
                                     <size key="maxSize" width="32" height="25"/>
                                     <button key="view" verticalHuggingPriority="750" id="pYK-Vb-WXv">
-                                        <rect key="frame" x="22" y="14" width="32" height="25"/>
+                                        <rect key="frame" x="2" y="14" width="32" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <animations/>
-                                        <buttonCell key="cell" type="roundTextured" title="K" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UL1-84-9a3">
+                                        <buttonCell key="cell" type="roundTextured" title="R" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UL1-84-9a3">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                     </button>
+                                    <connections>
+                                        <action selector="rulerButtonWasClicked:" target="lJ2-vo-LWm" id="Khd-rt-MuY"/>
+                                    </connections>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
@@ -737,12 +737,16 @@
                                 <toolbarItem reference="RKf-0Z-Xts"/>
                                 <toolbarItem reference="X9B-jx-okl"/>
                             </defaultToolbarItems>
+                            <connections>
+                                <outlet property="fontMenu" destination="r1p-3b-zL4" id="OFB-mZ-bVc"/>
+                                <outlet property="rulerButton" destination="pYK-Vb-WXv" id="4VS-iw-veS"/>
+                                <outlet property="sizeInput" destination="0tZ-Mg-F6y" id="nsj-2F-gXc"/>
+                                <outlet property="sizeSlider" destination="JgC-X6-QTQ" id="7qx-Na-kQ1"/>
+                            </connections>
                         </toolbar>
                     </window>
                     <connections>
-                        <outlet property="fontMenu" destination="r1p-3b-zL4" id="dVq-Wv-fIJ"/>
-                        <outlet property="sizeInput" destination="0tZ-Mg-F6y" id="1KJ-2a-0de"/>
-                        <outlet property="sizeSlider" destination="JgC-X6-QTQ" id="yRP-28-JBd"/>
+                        <outlet property="toolbar" destination="lJ2-vo-LWm" id="QdW-UK-csg"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
@@ -758,22 +762,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vF-36-5UK">
-                                <rect key="frame" x="120" y="68" width="240" height="135"/>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vF-36-5UK">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <clipView key="contentView" id="Lku-ys-jAU">
-                                    <rect key="frame" x="1" y="1" width="238" height="133"/>
+                                    <rect key="frame" x="1" y="1" width="478" height="268"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="n9K-m7-Etq">
-                                            <rect key="frame" x="0.0" y="0.0" width="238" height="133"/>
+                                        <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="n9K-m7-Etq">
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="268"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="238" height="133"/>
-                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <size key="minSize" width="478" height="268"/>
+                                            <size key="maxSize" width="496" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="238" height="133"/>
-                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <size key="minSize" width="478" height="268"/>
+                                            <size key="maxSize" width="496" height="10000000"/>
                                         </textView>
                                     </subviews>
                                     <animations/>
@@ -786,7 +790,7 @@
                                     <animations/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="4oY-1Q-oI7">
-                                    <rect key="frame" x="223" y="1" width="16" height="133"/>
+                                    <rect key="frame" x="463" y="1" width="16" height="268"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
@@ -806,7 +810,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="726"/>
+            <point key="canvasLocation" x="75" y="672"/>
         </scene>
     </scenes>
 </document>

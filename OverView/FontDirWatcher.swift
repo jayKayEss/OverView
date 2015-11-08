@@ -40,8 +40,9 @@ class FontDirWatcher {
         }
     }
     
-    func fontForFileName(fontFileName: String, size:Double) -> NSFont {
-        let fontPath = kFontDir + "/" + fontFileName
+    func fontForFileName(fontFileName: String?, size:Double) -> NSFont? {
+        guard fontFileName != nil else { return nil }
+        let fontPath = kFontDir + "/" + fontFileName!
         return NSFont.fontFromPath(fontPath, size: size)
     }
     
@@ -49,11 +50,16 @@ class FontDirWatcher {
 
 extension NSFont {
     
-    static func fontFromPath(filePath:String, size:Double) -> NSFont {
-        let dataProvider = CGDataProviderCreateWithFilename((filePath as NSString).UTF8String);
-        let fontRef = CGFontCreateWithDataProvider(dataProvider)
-        let fontCore = CTFontCreateWithGraphicsFont(fontRef!, CGFloat(size), nil, nil)
+    static func fontFromPath(filePath:String, size:Double) -> NSFont? {
+        guard filePath != "" else { return nil }
         
+        let dataProvider = CGDataProviderCreateWithFilename((filePath as NSString).UTF8String);
+        guard dataProvider != nil else { return nil }
+        
+        let fontRef = CGFontCreateWithDataProvider(dataProvider)
+        guard fontRef != nil else { return nil }
+        
+        let fontCore = CTFontCreateWithGraphicsFont(fontRef!, CGFloat(size), nil, nil)
         return fontCore as NSFont
     }
     

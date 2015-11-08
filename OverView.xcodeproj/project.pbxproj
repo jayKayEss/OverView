@@ -14,8 +14,8 @@
 		009C62181BEE7A4E004959B6 /* OverViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C62171BEE7A4E004959B6 /* OverViewTests.swift */; };
 		009C62231BEE7A4E004959B6 /* OverViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C62221BEE7A4E004959B6 /* OverViewUITests.swift */; };
 		009C62311BEF7AA9004959B6 /* FontDirWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C62301BEF7AA9004959B6 /* FontDirWatcher.swift */; };
-		009C62351BEF97F8004959B6 /* FontMenuToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C62341BEF97F8004959B6 /* FontMenuToolbarItem.swift */; };
 		009C62371BEF9E0E004959B6 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C62361BEF9E0E004959B6 /* WindowController.swift */; };
+		009C62391BEFEC94004959B6 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C62381BEFEC94004959B6 /* Toolbar.swift */; };
 		A06D959879F042634999C935 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E299378ABAC2B77E652513D8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -51,8 +51,8 @@
 		009C62241BEE7A4E004959B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		009C62301BEF7AA9004959B6 /* FontDirWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDirWatcher.swift; sourceTree = "<group>"; };
 		009C62321BEF855C004959B6 /* OverView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OverView-Bridging-Header.h"; sourceTree = "<group>"; };
-		009C62341BEF97F8004959B6 /* FontMenuToolbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontMenuToolbarItem.swift; sourceTree = "<group>"; };
 		009C62361BEF9E0E004959B6 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		009C62381BEFEC94004959B6 /* Toolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		560646B0C0E6B96DC9C871C3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8C0C2E3BEF23BC0F76014D12 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E299378ABAC2B77E652513D8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +114,7 @@
 				009C62361BEF9E0E004959B6 /* WindowController.swift */,
 				009C62071BEE7A4E004959B6 /* ViewController.swift */,
 				009C62301BEF7AA9004959B6 /* FontDirWatcher.swift */,
-				009C62341BEF97F8004959B6 /* FontMenuToolbarItem.swift */,
+				009C62381BEFEC94004959B6 /* Toolbar.swift */,
 				009C62091BEE7A4E004959B6 /* Assets.xcassets */,
 				009C620B1BEE7A4E004959B6 /* Main.storyboard */,
 				009C620E1BEE7A4E004959B6 /* Info.plist */,
@@ -341,7 +341,7 @@
 				009C62081BEE7A4E004959B6 /* ViewController.swift in Sources */,
 				009C62371BEF9E0E004959B6 /* WindowController.swift in Sources */,
 				009C62061BEE7A4E004959B6 /* AppDelegate.swift in Sources */,
-				009C62351BEF97F8004959B6 /* FontMenuToolbarItem.swift in Sources */,
+				009C62391BEFEC94004959B6 /* Toolbar.swift in Sources */,
 				009C62311BEF7AA9004959B6 /* FontDirWatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
