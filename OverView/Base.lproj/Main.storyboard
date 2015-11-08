@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9059"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,22 +642,107 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="OverView" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="OverView" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="A3E02123-A05A-4B5D-9C8A-60EEB6F5591E" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="lJ2-vo-LWm">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="X9B-jx-okl"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Akz-1E-hxG"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="RKf-0Z-Xts"/>
+                                <toolbarItem implicitItemIdentifier="EAFD4EDE-8A87-4905-9330-F88D5390196D" label="Font" paletteLabel="Font" id="KBB-7K-7Kd">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="100" height="26"/>
+                                    <size key="maxSize" width="300" height="26"/>
+                                    <popUpButton key="view" verticalHuggingPriority="750" id="r1p-3b-zL4">
+                                        <rect key="frame" x="0.0" y="14" width="100" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <animations/>
+                                        <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="b82-Km-3xv">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="v77-aQ-TDJ"/>
+                                        </popUpButtonCell>
+                                        <connections>
+                                            <action selector="fontMenuDidChange:" target="Oky-zY-oP4" id="r6j-yo-QaF"/>
+                                        </connections>
+                                    </popUpButton>
+                                    <connections>
+                                        <action selector="fontMenuDidChange:" target="B8D-0N-5wS" id="8zj-3b-4Jn"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="0F3B8ECB-C74A-42A7-AD18-61AEA4BD446A" label="Size Slider" paletteLabel="Size Slider" id="gvl-kC-zhY">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="96" height="21"/>
+                                    <size key="maxSize" width="96" height="21"/>
+                                    <slider key="view" verticalHuggingPriority="750" id="JgC-X6-QTQ">
+                                        <rect key="frame" x="0.0" y="14" width="96" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <animations/>
+                                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="8" maxValue="127" doubleValue="24" tickMarkPosition="below" numberOfTickMarks="12" sliderType="linear" id="01Q-kq-Jfd"/>
+                                    </slider>
+                                    <connections>
+                                        <action selector="fontSizeSliderDidChange:" target="B8D-0N-5wS" id="fRv-am-dFK"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="62CB4C70-4796-478E-ABF1-8231DC1DF0F3" label="Size Input" paletteLabel="Size Input" id="kJ9-wc-Jvu">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="52" height="22"/>
+                                    <size key="maxSize" width="52" height="22"/>
+                                    <textField key="view" verticalHuggingPriority="750" id="0tZ-Mg-F6y">
+                                        <rect key="frame" x="14" y="14" width="32" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <animations/>
+                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="zGE-tG-hMW">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <connections>
+                                        <action selector="fontSizeInputDidChange:" target="B8D-0N-5wS" id="tSK-jd-bbr"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="080FA265-1398-4BA5-BF3F-2D5B35DDEA30" label="Custom View" paletteLabel="Custom View" id="Fwb-sT-r3P">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="25"/>
+                                    <size key="maxSize" width="32" height="25"/>
+                                    <button key="view" verticalHuggingPriority="750" id="pYK-Vb-WXv">
+                                        <rect key="frame" x="22" y="14" width="32" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <animations/>
+                                        <buttonCell key="cell" type="roundTextured" title="K" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UL1-84-9a3">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="KBB-7K-7Kd"/>
+                                <toolbarItem reference="gvl-kC-zhY"/>
+                                <toolbarItem reference="kJ9-wc-Jvu"/>
+                                <toolbarItem reference="Fwb-sT-r3P"/>
+                                <toolbarItem reference="RKf-0Z-Xts"/>
+                                <toolbarItem reference="X9B-jx-okl"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                     </window>
                     <connections>
+                        <outlet property="fontMenu" destination="r1p-3b-zL4" id="dVq-Wv-fIJ"/>
+                        <outlet property="sizeInput" destination="0tZ-Mg-F6y" id="1KJ-2a-0de"/>
+                        <outlet property="sizeSlider" destination="JgC-X6-QTQ" id="yRP-28-JBd"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
@@ -667,15 +753,60 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="OverView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vF-36-5UK">
+                                <rect key="frame" x="120" y="68" width="240" height="135"/>
+                                <clipView key="contentView" id="Lku-ys-jAU">
+                                    <rect key="frame" x="1" y="1" width="238" height="133"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="n9K-m7-Etq">
+                                            <rect key="frame" x="0.0" y="0.0" width="238" height="133"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="238" height="133"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="238" height="133"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                        </textView>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <animations/>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="mNx-sY-t7o">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="4oY-1Q-oI7">
+                                    <rect key="frame" x="223" y="1" width="16" height="133"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4vF-36-5UK" secondAttribute="bottom" id="T4l-Nx-ekx"/>
+                            <constraint firstAttribute="trailing" secondItem="4vF-36-5UK" secondAttribute="trailing" id="Wku-zq-mtz"/>
+                            <constraint firstItem="4vF-36-5UK" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="fdj-ea-H4f"/>
+                            <constraint firstItem="4vF-36-5UK" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="wlq-QF-nBy"/>
+                        </constraints>
+                        <animations/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="n9K-m7-Etq" id="4Zb-oG-HwG"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="74" y="726"/>
         </scene>
     </scenes>
 </document>

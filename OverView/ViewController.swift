@@ -10,18 +10,21 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet var textView: NSTextView!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.representedObject = "Hello, World!";
     }
 
     override var representedObject: AnyObject? {
         didSet {
-        // Update the view, if already loaded.
+            textView.string = representedObject as? String;
         }
     }
-
-
+    
+    func updateViewForFont(font:NSFont) {
+        textView.font = font
+    }
 }
 

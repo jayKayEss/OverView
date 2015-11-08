@@ -13,6 +13,10 @@
 		009C620D1BEE7A4E004959B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009C620B1BEE7A4E004959B6 /* Main.storyboard */; };
 		009C62181BEE7A4E004959B6 /* OverViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C62171BEE7A4E004959B6 /* OverViewTests.swift */; };
 		009C62231BEE7A4E004959B6 /* OverViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C62221BEE7A4E004959B6 /* OverViewUITests.swift */; };
+		009C62311BEF7AA9004959B6 /* FontDirWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C62301BEF7AA9004959B6 /* FontDirWatcher.swift */; };
+		009C62351BEF97F8004959B6 /* FontMenuToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C62341BEF97F8004959B6 /* FontMenuToolbarItem.swift */; };
+		009C62371BEF9E0E004959B6 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C62361BEF9E0E004959B6 /* WindowController.swift */; };
+		A06D959879F042634999C935 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E299378ABAC2B77E652513D8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,13 @@
 		009C621E1BEE7A4E004959B6 /* OverViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OverViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		009C62221BEE7A4E004959B6 /* OverViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewUITests.swift; sourceTree = "<group>"; };
 		009C62241BEE7A4E004959B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		009C62301BEF7AA9004959B6 /* FontDirWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontDirWatcher.swift; sourceTree = "<group>"; };
+		009C62321BEF855C004959B6 /* OverView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OverView-Bridging-Header.h"; sourceTree = "<group>"; };
+		009C62341BEF97F8004959B6 /* FontMenuToolbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontMenuToolbarItem.swift; sourceTree = "<group>"; };
+		009C62361BEF9E0E004959B6 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		560646B0C0E6B96DC9C871C3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8C0C2E3BEF23BC0F76014D12 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E299378ABAC2B77E652513D8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06D959879F042634999C935 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +91,9 @@
 				009C62161BEE7A4E004959B6 /* OverViewTests */,
 				009C62211BEE7A4E004959B6 /* OverViewUITests */,
 				009C62031BEE7A4E004959B6 /* Products */,
+				E727AF7B2C2232E74E12681B /* Pods */,
+				F536D26066D977CDC132B423 /* Frameworks */,
+				009C62321BEF855C004959B6 /* OverView-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,7 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				009C62051BEE7A4E004959B6 /* AppDelegate.swift */,
+				009C62361BEF9E0E004959B6 /* WindowController.swift */,
 				009C62071BEE7A4E004959B6 /* ViewController.swift */,
+				009C62301BEF7AA9004959B6 /* FontDirWatcher.swift */,
+				009C62341BEF97F8004959B6 /* FontMenuToolbarItem.swift */,
 				009C62091BEE7A4E004959B6 /* Assets.xcassets */,
 				009C620B1BEE7A4E004959B6 /* Main.storyboard */,
 				009C620E1BEE7A4E004959B6 /* Info.plist */,
@@ -122,6 +140,23 @@
 			path = OverViewUITests;
 			sourceTree = "<group>";
 		};
+		E727AF7B2C2232E74E12681B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C0C2E3BEF23BC0F76014D12 /* Pods.debug.xcconfig */,
+				560646B0C0E6B96DC9C871C3 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F536D26066D977CDC132B423 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E299378ABAC2B77E652513D8 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +164,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 009C62271BEE7A4E004959B6 /* Build configuration list for PBXNativeTarget "OverView" */;
 			buildPhases = (
+				F4326BFBD28501236686DEA4 /* Check Pods Manifest.lock */,
 				009C61FE1BEE7A4E004959B6 /* Sources */,
 				009C61FF1BEE7A4E004959B6 /* Frameworks */,
 				009C62001BEE7A4E004959B6 /* Resources */,
+				486AF30C34DEAF9B17517FDF /* Embed Pods Frameworks */,
+				035E21498451F7514422C73A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,13 +285,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		035E21498451F7514422C73A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		486AF30C34DEAF9B17517FDF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4326BFBD28501236686DEA4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		009C61FE1BEE7A4E004959B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				009C62081BEE7A4E004959B6 /* ViewController.swift in Sources */,
+				009C62371BEF9E0E004959B6 /* WindowController.swift in Sources */,
 				009C62061BEE7A4E004959B6 /* AppDelegate.swift in Sources */,
+				009C62351BEF97F8004959B6 /* FontMenuToolbarItem.swift in Sources */,
+				009C62311BEF7AA9004959B6 /* FontDirWatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,25 +471,32 @@
 		};
 		009C62281BEE7A4E004959B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C0C2E3BEF23BC0F76014D12 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OverView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaykayess.OverView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OverView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		009C62291BEE7A4E004959B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 560646B0C0E6B96DC9C871C3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OverView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaykayess.OverView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OverView-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -475,6 +571,7 @@
 				009C62291BEE7A4E004959B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		009C622A1BEE7A4E004959B6 /* Build configuration list for PBXNativeTarget "OverViewTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +580,7 @@
 				009C622C1BEE7A4E004959B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		009C622D1BEE7A4E004959B6 /* Build configuration list for PBXNativeTarget "OverViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +589,7 @@
 				009C622F1BEE7A4E004959B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
