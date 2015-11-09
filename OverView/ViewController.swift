@@ -30,6 +30,10 @@ class ViewController: NSViewController, ToolbarVCDelegate {
         if (FontDirWatcher.sharedInstance.fontFiles.count > 0) {
             currentFont = FontDirWatcher.sharedInstance.fontFiles[0]
         }
+        
+        textView.drawsBackground = false
+        textView.wantsLayer = true
+        textView.layer?.backgroundColor = NSColor.whiteColor().CGColor
     }
 
     override func viewWillAppear() {
@@ -46,7 +50,7 @@ class ViewController: NSViewController, ToolbarVCDelegate {
         }
     }
     
-    func updateView() {
+    func updateView(animated: Bool = false) {
         var font: NSFont?
         
         font = FontDirWatcher.sharedInstance.fontForFileName(currentFont, size: currentSize)
@@ -56,6 +60,15 @@ class ViewController: NSViewController, ToolbarVCDelegate {
         }
         
         textView.font = font!
+
+        if (animated) {
+            let anim = CABasicAnimation(keyPath: "backgroundColor")
+            anim.fromValue = NSColor(red: 1.0, green: 1.0, blue: 0.6, alpha: 1.0).CGColor
+            anim.toValue = NSColor.whiteColor().CGColor
+            anim.duration = 0.75
+            anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            textView.layer!.addAnimation(anim, forKey: "backgroundColor")
+        }
     }
     
     func toolbarDidChangeFont(selectedFont: String?) {
@@ -83,7 +96,7 @@ class ViewController: NSViewController, ToolbarVCDelegate {
         }
         
         toolbar.initializeFontMenu(allFonts, selectedFont: currentFont)
-        updateView()
+        updateView(true)
     }
     
 }
